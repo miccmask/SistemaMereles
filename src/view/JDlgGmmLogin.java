@@ -16,6 +16,7 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
     public JDlgGmmLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
         setTitle("Login para o Sistema");
     }
 

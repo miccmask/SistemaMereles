@@ -58,11 +58,21 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
         jMnuClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMnuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cliente (1).png"))); // NOI18N
         jMnuClientes.setText("Clientes");
+        jMnuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuClientesActionPerformed(evt);
+            }
+        });
         jMnuCadastros.add(jMnuClientes);
 
         jMnuPelucias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMnuPelucias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/capivara.png"))); // NOI18N
         jMnuPelucias.setText("Pelúcias");
+        jMnuPelucias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuPeluciasActionPerformed(evt);
+            }
+        });
         jMnuCadastros.add(jMnuPelucias);
 
         jMnuFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -89,6 +99,11 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
         jMnuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMnuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit (1).png"))); // NOI18N
         jMnuSair.setText("Sair");
+        jMnuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuSairActionPerformed(evt);
+            }
+        });
         jMnuCadastros.add(jMnuSair);
 
         jMenuBar1.add(jMnuCadastros);
@@ -125,15 +140,38 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
 
     private void jMnuFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFornecedoresActionPerformed
         // TODO add your handling code here:
+        JDlgGmmFornecedores jDlgGmmFornecedores = new JDlgGmmFornecedores(null, true);
+        jDlgGmmFornecedores.setVisible(true);
     }//GEN-LAST:event_jMnuFornecedoresActionPerformed
 
     private void jMnuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUsuariosActionPerformed
         // TODO add your handling code here:
+        JDlgGmmUsuarios jDlgGmmUsuarios = new JDlgGmmUsuarios(null, true);
+        jDlgGmmUsuarios.setVisible(true);
     }//GEN-LAST:event_jMnuUsuariosActionPerformed
 
     private void jMnuProdutorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuProdutorasActionPerformed
         // TODO add your handling code here:
+        JDlgGmmProdutora jDlgGmmProdutora = new JDlgGmmProdutora(null, true);
+        jDlgGmmProdutora.setVisible(true);
     }//GEN-LAST:event_jMnuProdutorasActionPerformed
+
+    private void jMnuPeluciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuPeluciasActionPerformed
+        // TODO add your handling code here:
+        JDlgGmmProdutos jDlgGmmProdutos = new JDlgGmmProdutos(null, true);
+        jDlgGmmProdutos.setVisible(true);
+    }//GEN-LAST:event_jMnuPeluciasActionPerformed
+
+    private void jMnuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuClientesActionPerformed
+        // TODO add your handling code here:
+        JDlgGmmClientes jDlgGmmClientes = new JDlgGmmClientes(null, true);
+        jDlgGmmClientes.setVisible(true);
+    }//GEN-LAST:event_jMnuClientesActionPerformed
+
+    private void jMnuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuSairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMnuSairActionPerformed
 
     /**
      * @param args the command line arguments
