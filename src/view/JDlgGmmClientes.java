@@ -18,7 +18,7 @@ public class JDlgGmmClientes extends javax.swing.JDialog {
     public JDlgGmmClientes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setTitle("Cadastro de Usuários");
+        setTitle("Cadastro de Clientes");
         setLocationRelativeTo(null);
         jTxtNome.setEnabled(false);
         jTxtCodigo.setEnabled(false);

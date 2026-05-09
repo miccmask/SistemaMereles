@@ -34,6 +34,7 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
         jMnuClientes = new javax.swing.JMenuItem();
         jMnuPelucias = new javax.swing.JMenuItem();
         jMnuFornecedores = new javax.swing.JMenuItem();
+        jMnuProdutoras = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMnuSair = new javax.swing.JMenuItem();
         jMnuMovimentos = new javax.swing.JMenu();
@@ -60,10 +61,12 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
         jMnuCadastros.add(jMnuClientes);
 
         jMnuPelucias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuPelucias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/capivara.png"))); // NOI18N
         jMnuPelucias.setText("Pelúcias");
         jMnuCadastros.add(jMnuPelucias);
 
         jMnuFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuFornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/marcas.jpeg"))); // NOI18N
         jMnuFornecedores.setText("Fornecedores");
         jMnuFornecedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +74,16 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
             }
         });
         jMnuCadastros.add(jMnuFornecedores);
+
+        jMnuProdutoras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMnuProdutoras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fabrica.png"))); // NOI18N
+        jMnuProdutoras.setText("Produtoras");
+        jMnuProdutoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuProdutorasActionPerformed(evt);
+            }
+        });
+        jMnuCadastros.add(jMnuProdutoras);
         jMnuCadastros.add(jSeparator1);
 
         jMnuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -83,10 +96,12 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
         jMnuMovimentos.setText("Movimentos");
 
         jMnuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/venda.png"))); // NOI18N
         jMnuVendas.setText("Vendas");
         jMnuMovimentos.add(jMnuVendas);
 
         jMnuCompras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMnuCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/compra.png"))); // NOI18N
         jMnuCompras.setText("Compras");
         jMnuMovimentos.add(jMnuCompras);
 
@@ -115,6 +130,10 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
     private void jMnuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUsuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMnuUsuariosActionPerformed
+
+    private void jMnuProdutorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuProdutorasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMnuProdutorasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +179,7 @@ public class JFrmGmmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMnuFornecedores;
     private javax.swing.JMenu jMnuMovimentos;
     private javax.swing.JMenuItem jMnuPelucias;
+    private javax.swing.JMenuItem jMnuProdutoras;
     private javax.swing.JMenuItem jMnuSair;
     private javax.swing.JMenuItem jMnuUsuarios;
     private javax.swing.JMenuItem jMnuVendas;
