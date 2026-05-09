@@ -30,6 +30,10 @@ public class JDlgGmmUsuarios extends javax.swing.JDialog {
         jChbAtivo.setEnabled(false);
         jBtnConfirmar.setEnabled(false);
         jBtnCancelar.setEnabled(false);
+        jBtnAlterar.setEnabled(true);
+        jBtnIncluir.setEnabled(true);
+        jBtnPesquisar.setEnabled(true);
+        jBtnExcluir.setEnabled(true);
     }
 
     
