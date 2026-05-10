@@ -4,12 +4,17 @@
  */
 package view;
 import javax.swing.JOptionPane;
+
+import dao.DaoGmmUsuarios;
 /**
  *
  * @author USER
  */
 public class JDlgGmmLogin extends javax.swing.JDialog {
 
+    
+    private int tentativas;
+    
     /**
      * Creates new form JDlgGmmLogin
      */
@@ -32,9 +37,9 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
         jLblUsuario = new javax.swing.JLabel();
         jLblSenha = new javax.swing.JLabel();
         jTxtUsuario = new javax.swing.JTextField();
-        jFmtSenha = new javax.swing.JFormattedTextField();
         jBtnConfirmar = new javax.swing.JButton();
         jBtnCancelar = new javax.swing.JButton();
+        jPwfSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -72,7 +77,7 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnCancelar))
                     .addComponent(jTxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                    .addComponent(jFmtSenha))
+                    .addComponent(jPwfSenha))
                 .addContainerGap(272, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,9 +89,9 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
                 .addComponent(jTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLblSenha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jFmtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPwfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnCancelar))
@@ -98,10 +103,31 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
+        DaoGmmUsuarios dao = new DaoGmmUsuarios();
+        String usuario = jTxtUsuario.getText();
+        String senha = jPwfSenha.getText();
+        String usuariocorreto = "Mereles";
+        String senhacorreta = "123";       
+        
+
+        if (tentativas == 3) {
+            JOptionPane.showMessageDialog(null, "Tentativas demais, tente novamente mais tarde");
+            this.dispose();
+        } else {
+            if ((usuario.equals(usuariocorreto)) && (senha.equals(senhacorreta))) {
+                JOptionPane.showMessageDialog(null, "Logado com Sucesso");
+                new JFrmGmmPrincipal().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos. Tentativas restantes: " + (3 - tentativas));
+                tentativas++;
+            }
+        }
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     /**
@@ -149,9 +175,9 @@ public class JDlgGmmLogin extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnConfirmar;
-    private javax.swing.JFormattedTextField jFmtSenha;
     private javax.swing.JLabel jLblSenha;
     private javax.swing.JLabel jLblUsuario;
+    private javax.swing.JPasswordField jPwfSenha;
     private javax.swing.JTextField jTxtUsuario;
     // End of variables declaration//GEN-END:variables
 }

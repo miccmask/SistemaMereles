@@ -47,6 +47,10 @@ public class DaoGmmUsuarios {
             Logger.getLogger(JDbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public boolean logar(String usuario, String senha) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     
