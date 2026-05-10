@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.GmmUsuarios;
+import bean.GmmFornecedores;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,10 +17,9 @@ import testes.JDbcCrud;
  *
  * @author USER
  */
-public class DaoGmmUsuarios {
-
+public class DaoGmmFornecedores {
     public void insert(Object object) {
-        GmmUsuarios gmmUsuarios = (GmmUsuarios) object;
+        GmmFornecedores gmmFornecedores = (GmmFornecedores) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -29,16 +28,23 @@ public class DaoGmmUsuarios {
             password = "guilherme_mereles";
             Connection cnt;
             cnt = DriverManager.getConnection(url, user, password);
-            String sql = "insert into gmm_usuarios values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into gmm_fornecedores values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, gmmUsuarios.getGmmIdUsuarios());
-            pst.setString(2, gmmUsuarios.getGmmNome());
-            pst.setString(3, gmmUsuarios.getGmmApelido());
-            pst.setString(4, gmmUsuarios.getGmmCpf());
+            pst.setInt(1, gmmFornecedores.getGmmIdFornecedores());
+            pst.setString(2, gmmFornecedores.getGmmNome());
+            pst.setString(3, gmmFornecedores.getGmmPelucia());
+            pst.setString(4, gmmFornecedores.getGmmCpf());
             pst.setDate(5, null);
-            pst.setInt(6, gmmUsuarios.getGmmNivel());
-            pst.setString(7, gmmUsuarios.getGmmSenha());
-            pst.setString(8, gmmUsuarios.getGmmAtivo());
+            pst.setString(6, gmmFornecedores.getGmmEmail());
+            pst.setString(7, gmmFornecedores.getGmmTelefone());
+            pst.setString(8, gmmFornecedores.getGmmSiteWeb());
+            pst.setInt(9, gmmFornecedores.getGmmPrazoEntregaMedio());
+            pst.setString(10, gmmFornecedores.getGmmInscricaoEstadual());
+            pst.setString(11, gmmFornecedores.getGmmCondicaoPagamento());
+            pst.setString(12, gmmFornecedores.getGmmCategoriaProduto());
+            pst.setString(13, gmmFornecedores.getGmmBancoContaPagamento());
+            pst.setString(14, gmmFornecedores.getGmmEnderecoCompleto());
+            pst.setDate(15, null);
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {
@@ -47,7 +53,4 @@ public class DaoGmmUsuarios {
             Logger.getLogger(JDbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
 }

@@ -13,7 +13,7 @@ public class GmmProdutos {
     private int gmmIdPelucia;
     private String gmmNome;
     private String gmmPreco;
-    private String gmmProdutora;
+    private int gmmProdutora;
     private int gmmEstoque;
     private String gmmCategoria;
     private String gmmMaterial;
@@ -63,14 +63,14 @@ public class GmmProdutos {
     /**
      * @return the gmmProdutora
      */
-    public String getGmmProdutora() {
+    public int getGmmProdutora() {
         return gmmProdutora;
     }
 
     /**
      * @param gmmProdutora the gmmProdutora to set
      */
-    public void setGmmProdutora(String gmmProdutora) {
+    public void setGmmProdutora(int gmmProdutora) {
         this.gmmProdutora = gmmProdutora;
     }
 

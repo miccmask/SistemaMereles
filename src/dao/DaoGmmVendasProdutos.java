@@ -4,23 +4,21 @@
  */
 package dao;
 
-import bean.GmmUsuarios;
+import bean.GmmVendasProdutos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import testes.JDbcCrud;
-
+import testes.JDbcCrud;    
 /**
  *
  * @author USER
  */
-public class DaoGmmUsuarios {
-
-    public void insert(Object object) {
-        GmmUsuarios gmmUsuarios = (GmmUsuarios) object;
+public class DaoGmmVendasProdutos {
+        public void insert(Object object) {
+            GmmVendasProdutos gmmVendasProdutos = (GmmVendasProdutos) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -29,16 +27,13 @@ public class DaoGmmUsuarios {
             password = "guilherme_mereles";
             Connection cnt;
             cnt = DriverManager.getConnection(url, user, password);
-            String sql = "insert into gmm_usuarios values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into gmm_pedidosprodutos values (?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, gmmUsuarios.getGmmIdUsuarios());
-            pst.setString(2, gmmUsuarios.getGmmNome());
-            pst.setString(3, gmmUsuarios.getGmmApelido());
-            pst.setString(4, gmmUsuarios.getGmmCpf());
-            pst.setDate(5, null);
-            pst.setInt(6, gmmUsuarios.getGmmNivel());
-            pst.setString(7, gmmUsuarios.getGmmSenha());
-            pst.setString(8, gmmUsuarios.getGmmAtivo());
+            pst.setInt(1, gmmVendasProdutos.getGmmIdVendasProdutos());
+            pst.setInt(2, gmmVendasProdutos.getGmmVenda());
+            pst.setInt(3, gmmVendasProdutos.getGmmProdutos());
+            pst.setInt(4, gmmVendasProdutos.getGmmQuantidade());
+            pst.setString(5, gmmVendasProdutos.getGmmValorUnitario());
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {
@@ -47,7 +42,4 @@ public class DaoGmmUsuarios {
             Logger.getLogger(JDbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
 }

@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.GmmUsuarios;
+import bean.GmmVendas;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,10 +17,9 @@ import testes.JDbcCrud;
  *
  * @author USER
  */
-public class DaoGmmUsuarios {
-
+public class DaoGmmVendas {
     public void insert(Object object) {
-        GmmUsuarios gmmUsuarios = (GmmUsuarios) object;
+        GmmVendas gmmVendas = (GmmVendas) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -29,16 +28,15 @@ public class DaoGmmUsuarios {
             password = "guilherme_mereles";
             Connection cnt;
             cnt = DriverManager.getConnection(url, user, password);
-            String sql = "insert into gmm_usuarios values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into gmm_pedidos values (?,?,?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, gmmUsuarios.getGmmIdUsuarios());
-            pst.setString(2, gmmUsuarios.getGmmNome());
-            pst.setString(3, gmmUsuarios.getGmmApelido());
-            pst.setString(4, gmmUsuarios.getGmmCpf());
+            pst.setInt(1, gmmVendas.getGmmIdVendas());
+            pst.setString(2, gmmVendas.getGmmUsuario());
+            pst.setString(3, gmmVendas.getGmmValorTotal());
+            pst.setString(4, gmmVendas.getGmmFormaPagamento());
             pst.setDate(5, null);
-            pst.setInt(6, gmmUsuarios.getGmmNivel());
-            pst.setString(7, gmmUsuarios.getGmmSenha());
-            pst.setString(8, gmmUsuarios.getGmmAtivo());
+            pst.setString(6, gmmVendas.getGmmStatusVenda());
+            pst.setString(7, gmmVendas.getGmmDesconto());
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {
@@ -47,7 +45,4 @@ public class DaoGmmUsuarios {
             Logger.getLogger(JDbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
 }

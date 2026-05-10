@@ -4,6 +4,7 @@
  */
 package dao;
 
+import bean.GmmProdutos;
 import bean.GmmUsuarios;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,10 +18,10 @@ import testes.JDbcCrud;
  *
  * @author USER
  */
-public class DaoGmmUsuarios {
-
+public class DaoGmmProdutos {
+    
     public void insert(Object object) {
-        GmmUsuarios gmmUsuarios = (GmmUsuarios) object;
+        GmmProdutos gmmProdutos = (GmmProdutos) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -29,16 +30,15 @@ public class DaoGmmUsuarios {
             password = "guilherme_mereles";
             Connection cnt;
             cnt = DriverManager.getConnection(url, user, password);
-            String sql = "insert into gmm_usuarios values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into gmm_pelucia values (?,?,?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, gmmUsuarios.getGmmIdUsuarios());
-            pst.setString(2, gmmUsuarios.getGmmNome());
-            pst.setString(3, gmmUsuarios.getGmmApelido());
-            pst.setString(4, gmmUsuarios.getGmmCpf());
-            pst.setDate(5, null);
-            pst.setInt(6, gmmUsuarios.getGmmNivel());
-            pst.setString(7, gmmUsuarios.getGmmSenha());
-            pst.setString(8, gmmUsuarios.getGmmAtivo());
+            pst.setInt(1, gmmProdutos.getGmmIdPelucia());
+            pst.setString(2, gmmProdutos.getGmmNome());
+            pst.setString(3, gmmProdutos.getGmmPreco());
+            pst.setInt(4, gmmProdutos.getGmmProdutora());
+            pst.setInt(5, gmmProdutos.getGmmEstoque());
+            pst.setString(6, gmmProdutos.getGmmCategoria());
+            pst.setString(7, gmmProdutos.getGmmMaterial());
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {
@@ -47,7 +47,4 @@ public class DaoGmmUsuarios {
             Logger.getLogger(JDbcCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
 }
