@@ -5,9 +5,14 @@
         <group>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmUsuarios.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmProdutora.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/testes/JDbcSelect.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/dao/DaoGmmUsuarios.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmClientes.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmProdutos.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmLogin.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/dao/DaoAbstract.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/bean/GmmUsuarios.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/testes/JDbcCrud.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JFrmGmmPrincipal.java</file>
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/SistemaMereles/src/view/JDlgGmmFornecedores.java</file>
         </group>
